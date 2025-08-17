@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#date-planner">Date Planner</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#todo">To-Do List</a></li>
+            <li><a href="#lovenotes">Our Notes</a></li>
+            <li><a href="#goals">Goals</a></li>
+            <li><a href="#music">Music</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="section">
+  <h1>💖 Arwin and Erica's Love Web 💖</h1>
+
+  <div class="dashboard">
+    <p><strong>Date:</strong> <span id="current-date"></span></p>
+    <p><strong>Next Event:</strong> <span id="next-event">Anniversary (April 14, 2026)</span></p>
+    <p><strong>Countdown:</strong> <span id="current-countdown"></span></p>
+    <p><strong>Mood Status:</strong> <span id="mood-status">😊 Happy</span></p>
+  </div>
+</section>
+
+
+    <!-- Additional sections for Date Planner, Schedule, etc. -->
+    <section id="date-planner">
+  <div class="planner-container">
+    <h2>💖 Date Planner</h2>
+    <form id="planner-form">
+      <label for="date">Pick a Date:</label>
+      <input type="date" id="date" required>
+
+      <label for="plan">share your plan:</label>
+      <input type="text" id="question" placeholder="What do you want to do" required>
+
+      <button type="submit">Save Plan</button>
+    </form>
+
+    <div id="planner-output"></div>
+  </div>
+</section>
+
+
+
+    <section id="schedule" class="section">
+  <h1>📅 Our Schedule</h1>
+
+  <div class="schedule-container">
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Event</th>
+          <th>Notes</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="schedule-list">
+        <!-- Empty at start, will be filled by user -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Add new schedule form -->
+  <div class="schedule-form">
+    <input type="date" id="event-date" />
+    <input type="text" id="event-name" placeholder="Event" />
+    <input type="text" id="event-notes" placeholder="Notes" />
+    <button onclick="addSchedule()">➕ Add</button>
+  </div>
+</section>
+
+
+
+
+
+    <section id="todo" class="section">
+  <h1>✅ Our To-Do List</h1>
+
+  <div class="todo-container">
+    <ul id="todo-list">
+      <!-- Tasks will show here -->
+    </ul>
+  </div>
+
+  <!-- Add new task form -->
+  <div class="todo-form">
+    <input type="text" id="todo-task" placeholder="Enter a task..." />
+    <button onclick="addTask()">➕ Add</button>
+  </div>
+</section>
+
+
+    
+
+    <section id="lovenotes" class="section">
+  <h1>💌 Love Notes</h1>
+  
+  <div class="notes-container" id="notes-list">
+    <!-- Notes will appear here -->
+  </div>
+
+  <div class="notes-form">
+    <textarea id="note-text" placeholder="Write a love note..."></textarea>
+    <button onclick="addNote()">➕ Add Note</button>
+  </div>
+</section>
+
+
+
+
+   <section id="goals" class="section">
+  <h1>🎯 Our Goals</h1>
+
+  <div class="goals-container" id="goals-list">
+    <!-- Goals will appear here -->
+  </div>
+
+  <div class="goals-form">
+    <input type="text" id="goal-text" placeholder="Write a new goal..." />
+    <button onclick="addGoal()">➕ Add Goal</button>
+  </div>
+</section>
+
+<section id="music" class="section">
+  <h1>🎶 Music We're Currently Listening To</h1>
+  <p>Add songs you're vibing with right now 💕</p>
+
+  <!-- Music form -->
+  <div class="music-form">
+    <input type="text" id="current-song" placeholder="Enter song title or artist..." />
+    <button onclick="addCurrentSong()">➕ Add</button>
+  </div>
+
+  <!-- Music list -->
+  <div class="music-list">
+    <h2>📻 Now Playing</h2>
+    <ul id="song-list"></ul>
+  </div>
+</section>
+<section id="music" class="section">
+  <h1>🎶 Music We're Currently Listening To</h1>
+  <p>Add songs you're vibing with right now 💕</p>
+
+  <!-- Music form -->
+  <div class="music-form">
+    <input type="text" id="current-song" placeholder="Enter song title or artist..." />
+    <button onclick="addCurrentSong()">➕ Add</button>
+  </div>
+
+  <!-- Music list -->
+  <div class="music-list">
+    <h2>📻 Now Playing</h2>
+    <ul id="song-list"></ul>
+  </div>
+</section>
+
+
+   
+  
+
+    <footer>
+        <p>&copy; Since 2024</p>
+    </footer>
+</body>
+</html>
