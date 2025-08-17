@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -87,34 +87,37 @@ footer {
   width: 100%;
 }
 #date-planner {
-  padding: 50px 20px;
+  padding: 20px;
   display: flex;
   justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .planner-container {
   background: #fff;
-  padding: 25px;
+  padding: 20px;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   width: 100%;
-  max-width: 500px;
-}
-
-#date-planner h2 {
-  text-align: center;
-  color: #e91e63;
-  margin-bottom: 20px;
+  max-width: 100%;        /* fill available width */
+  box-sizing: border-box;
+  overflow-x: auto;       /* allow small horizontal scroll if needed */
 }
 
 #planner-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
+  width: 100%;
 }
 
 #planner-form input, 
+#planner-form textarea,
 #planner-form button {
+  width: 100%;            /* always fill container */
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #ddd;
@@ -122,7 +125,7 @@ footer {
 
 #planner-form button {
   background: #e91e63;
-  color: #fff;
+  color: white;
   border: none;
   cursor: pointer;
   transition: 0.3s;
@@ -134,15 +137,20 @@ footer {
 
 #planner-output {
   margin-top: 20px;
-  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .entry {
   background: #f8bbd0;
-  padding: 10px;
-  margin: 8px 0;
+  padding: 12px 15px;
   border-radius: 8px;
   position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .delete-btn {
@@ -154,7 +162,24 @@ footer {
   cursor: pointer;
   font-size: 14px;
   font-weight: bold;
+  color: #333;
 }
+
+/* Optional: Make table inside planner responsive if used */
+.planner-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.planner-container table th,
+.planner-container table td {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
 #home {
   display: flex;
   flex-direction: column;
